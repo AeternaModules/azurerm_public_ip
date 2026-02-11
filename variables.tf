@@ -28,19 +28,19 @@ EOT
     location                = string
     name                    = string
     resource_group_name     = string
-    sku_tier                = optional(string, "Regional")
-    sku                     = optional(string, "Standard")
+    sku_tier                = optional(string) # Default: "Regional"
+    sku                     = optional(string) # Default: "Standard"
     reverse_fqdn            = optional(string)
     public_ip_prefix_id     = optional(string)
-    ip_version              = optional(string, "IPv4")
+    ip_version              = optional(string) # Default: "IPv4"
     ip_tags                 = optional(map(string))
     edge_zone               = optional(string)
     tags                    = optional(map(string))
     domain_name_label_scope = optional(string)
     domain_name_label       = optional(string)
     ddos_protection_plan_id = optional(string)
-    ddos_protection_mode    = optional(string, "VirtualNetworkInherited")
-    idle_timeout_in_minutes = optional(number, 4)
+    ddos_protection_mode    = optional(string) # Default: "VirtualNetworkInherited"
+    idle_timeout_in_minutes = optional(number) # Default: 4
     zones                   = optional(set(string))
   }))
 }
