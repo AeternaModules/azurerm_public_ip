@@ -1,3 +1,7 @@
+output "public_ips_id" {
+  description = "Map of id values across all public_ips, keyed the same as var.public_ips"
+  value       = { for k, v in azurerm_public_ip.public_ips : k => v.id }
+}
 output "public_ips_allocation_method" {
   description = "Map of allocation_method values across all public_ips, keyed the same as var.public_ips"
   value       = { for k, v in azurerm_public_ip.public_ips : k => v.allocation_method }
